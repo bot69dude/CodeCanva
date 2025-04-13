@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "838b4dc3-112d-434f-92c2-873c63866c5b",
+		"name": "codeCanva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30795891"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"sumanlia\",\r\n    \"password\": \"Mysecret@12321\",\r\n    \"email\": \"example123@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/user/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"Mysecret@12321\",\r\n    \"email\": \"example123@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/user/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:5000/api/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "Add_Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My New Project\",\r\n  \"description\": \"This is a sample project description\",\r\n  \"tags\": [\"javascript\", \"react\", \"typescript\"],\r\n  \"isPublic\": true,\r\n  \"structure\": [\r\n    {\r\n      \"id\": \"root\",\r\n      \"name\": \"root\",\r\n      \"type\": \"folder\",\r\n      \"parentId\": null\r\n    },\r\n    {\r\n      \"id\": \"file1\",\r\n      \"name\": \"index.js\",\r\n      \"type\": \"file\",\r\n      \"parentId\": \"root\",\r\n      \"content\": \"console.log('Hello world');\"\r\n    },\r\n    {\r\n      \"id\": \"folder1\",\r\n      \"name\": \"src\",\r\n      \"type\": \"folder\",\r\n      \"parentId\": \"root\"\r\n    },\r\n    {\r\n      \"id\": \"file2\",\r\n      \"name\": \"app.js\",\r\n      \"type\": \"file\",\r\n      \"parentId\": \"folder1\",\r\n      \"content\": \"import React from 'react';\\n\\nfunction App() {\\n  return <div>Hello React</div>;\\n}\\n\\nexport default App;\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/project/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get_all_Projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/v1/project/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Project",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Project Title\",\r\n  \"description\": \"This description has been updated\",\r\n  \"tags\": [\"javascript\", \"react\", \"typescript\", \"updated\"],\r\n  \"isPublic\": false,\r\n  \"structure\": [\r\n    {\r\n      \"id\": \"root\",\r\n      \"name\": \"root\",\r\n      \"type\": \"folder\",\r\n      \"parentId\": null,\r\n      \"content\": \"\"\r\n    },\r\n    {\r\n      \"id\": \"file1\",\r\n      \"name\": \"index.js\",\r\n      \"type\": \"file\",\r\n      \"parentId\": \"root\",\r\n      \"content\": \"console.log('Updated content');\"\r\n    },\r\n    {\r\n      \"id\": \"folder1\",\r\n      \"name\": \"src\",\r\n      \"type\": \"folder\",\r\n      \"parentId\": \"root\",\r\n      \"content\": \"\"\r\n    },\r\n    {\r\n      \"id\": \"file2\",\r\n      \"name\": \"app.js\",\r\n      \"type\": \"file\",\r\n      \"parentId\": \"folder1\",\r\n      \"content\": \"import React from 'react';\\n\\nfunction App() {\\n  return <div>Hello Updated React App</div>;\\n}\\n\\nexport default App;\"\r\n    },\r\n    {\r\n      \"id\": \"file3\",\r\n      \"name\": \"styles.css\",\r\n      \"type\": \"file\",\r\n      \"parentId\": \"root\",\r\n      \"content\": \"body { font-family: Arial; }\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/project/67f68490bdf989471f4766dd"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Project",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/api/v1/project/67f685df6c67ff473ce670b0"
+			},
+			"response": []
+		}
+	]
+}
